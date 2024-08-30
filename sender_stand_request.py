@@ -16,6 +16,7 @@ order_response = post_new_order(data.order_body)
 
 # Запрос на получение заказа по треку заказа
 def get_order(track_order):
+    data.params_track["t"] = data.track
     return requests.get(configuration.URL_SERVICE+configuration.GET_ORDER,
                         params=track_order)
 
